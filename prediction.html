@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #2274A5; /* Set the background color to #2274A5 */
+            color: #fff; /* Set the text color to white */
+        }
+
+        p, button {
+            margin: 10px;
+        }
+
+        p#predictionResult {
+            font-size: 4em; /* Increase font size by 1 unit */
+            font-weight: bold; /* Apply bold style */
+            position: relative;
+            top: -0.5cm; /* Move the text 0.5cm upwards */
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #E7EB90; /* Set the button background color to #E7EB90 */
+            color: #2274A5; /* Set the button text color to #2274A5 */
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+    <!-- Add any additional styles or meta tags as needed -->
+</head>
+<body>
+    <p id="predictionResult">Prediction Result:</p>
+
+    <p id="predictionResultValue"></p>
+
+    <button onclick="goBack()">Go Back</button>
+
+    <script>
+        // Retrieve the prediction result from sessionStorage
+        var predictionResult = sessionStorage.getItem('predictionResult');
+
+        // Display the prediction result on the page
+        document.getElementById('predictionResultValue').innerText = predictionResult;
+
+        function goBack() {
+            // Navigate back to the original page
+            window.location.href = 'newpage.html';
+        }
+    </script>
+</body>
+</html>
